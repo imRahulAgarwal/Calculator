@@ -1,0 +1,121 @@
+html,
+body {
+  height: 100%;
+}
+.container-fluid {
+  justify-content: center;
+  align-items: center;
+  background-color: #08d9d6;
+}
+.heading {
+  display: flex;
+  align-items: center;
+  font-family: 'Merriweather', serif;
+}
+.calculator {
+  flex-direction: column;
+  position: relative;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #252a34;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.95px 2.95px 2.6px;
+}
+.projectTitle {
+  font-family: 'Merriweather', serif;
+  margin: auto;
+}
+#inputNum {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: right;
+  padding-right: 5px;
+  width: 190px;
+  height: 25px;
+  background-color: #eaeaea;
+  color: #000;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+}
+.button {
+  background-color: #b0daff;
+  width: 50px;
+  height: 50px;
+  margin: 3px;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+}
+.button:active {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.openBtn {
+  color: #ff0;
+  cursor: pointer;
+  position: absolute;
+  height: fit-content;
+  width: fit-content;
+}
+.closeBtn {
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  right: 0;
+  margin: 0.5rem;
+}
+.history {
+  height: 100%;
+  width: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: 10px;
+  overflow-x: hidden;
+  background-color: #000;
+  transition: 0.5s ease-in-out;
+}
+p {
+  margin: 0;
+}
+.myText {
+  width: 100%;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+}
+.blur {
+  filter: blur(1px);
+}
+.expand {
+  width: 70%;
+}
+.button,
+.openBtn,
+.closeBtn,
+.projectTitle {
+  font-size: 1.5rem;
+}
+.button,
+#inputNum {
+  border: 0;
+  border-radius: 5px;
+}
+
+.projectTitle,
+.myText,
+.history {
+  color: #fff;
+}
+
+.historyTop {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+}
+
+@media screen and (min-width: 320px) and (max-width: 420px) {
+  .button {
+    display: flex;
+    justify-content: center;
+  }
+}
