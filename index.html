@@ -18,7 +18,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@300&display=swap"
         rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@500&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/62c9c0bb19.js" crossorigin="anonymous"></script>
 
@@ -28,52 +29,52 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row g-0">
-            <div class="col">
-                <div class="calculator">
-                    <i class="fa-solid fa-bars myIcon"></i>
-                    <div class="history">
-                    </div>
-                    <div class="inputNumber"><input type="text" name="myNum" id="inputNum" disabled="disabled"></div>
-                    <table class="all">
-                        <tr>
-                            <td><input type="button" class="button" value="C"></td>
-                            <td><input type="button" class="button" value="BS"></td>
-                            <td><input type="button" class="button" value="("></td>
-                            <td><input type="button" class="button" value=")"></td>
-                        </tr>
-
-                        <tr>
-                            <td><input type="button" value="7" class="button"></td>
-                            <td><input type="button" value="8" class="button"></td>
-                            <td><input type="button" value="9" class="button"></td>
-                            <td><input type="button" class="button" value="/"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="button" value="4" class="button"></td>
-                            <td><input type="button" value="5" class="button"></td>
-                            <td><input type="button" value="6" class="button"></td>
-                            <td><input type="button" class="button" value="*"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="button" value="1" class="button"></td>
-                            <td><input type="button" value="2" class="button"></td>
-                            <td><input type="button" value="3" class="button"></td>
-                            <td><input type="button" class="button" value="-"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="button" class="button" value="0"></td>
-                            <td><input type="button" class="button" value="."></td>
-                            <td><input type="button" class="button" value="="></td>
-                            <td><input type="button" class="button" value="+"></td>
-                        </tr>
-                    </table>
-                </div>
-                <!-- </div> -->
-                <!-- <div class="col"> -->
-
+    <div class="container-fluid d-flex h-100">
+        <div class="calculator d-flex">
+            <div class="heading">
+                <i class="fa-solid fa-bars openBtn"></i>
+                <span class="projectTitle">Calculator</span>
             </div>
+            <div class="history">
+                <div class="historyTop">
+                    <span class="projectTitle">History</span>
+                    <i class="fa-solid fa-xmark closeBtn" onclick="closeBtn()"></i>
+                </div>
+            </div>
+            <div id="inputNum" class="mx-auto"></div>
+            <table class="all">
+                <tr>
+                    <td><input type="button" class="button" value="C"></td>
+                    <td><input type="button" class="button" value="BS"></td>
+                    <td><input type="button" class="button" value="("></td>
+                    <td><input type="button" class="button" value=")"></td>
+                </tr>
+
+                <tr>
+                    <td><input type="button" value="7" class="button"></td>
+                    <td><input type="button" value="8" class="button"></td>
+                    <td><input type="button" value="9" class="button"></td>
+                    <td><input type="button" class="button" value="/"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="4" class="button"></td>
+                    <td><input type="button" value="5" class="button"></td>
+                    <td><input type="button" value="6" class="button"></td>
+                    <td><input type="button" class="button" value="*"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="1" class="button"></td>
+                    <td><input type="button" value="2" class="button"></td>
+                    <td><input type="button" value="3" class="button"></td>
+                    <td><input type="button" class="button" value="-"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="button" value="0"></td>
+                    <td><input type="button" class="button" value="."></td>
+                    <td><input type="button" class="button" value="="></td>
+                    <td><input type="button" class="button" value="+"></td>
+                </tr>
+            </table>
         </div>
     </div>
     <script src="minified.js"></script>

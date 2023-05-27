@@ -1,17 +1,28 @@
-let icon = document.querySelector(".myIcon");
-icon.addEventListener("click",()=>{
-    let history = document.querySelector(".history");
-    history.classList.toggle("expand");
-    icon.classList.toggle("come");
-    document.querySelector(".all").classList.toggle("blur");
-    document.querySelector(".inputNumber").classList.toggle("blur");
-})
+let icon = document.querySelector(".openBtn");
+let history = document.querySelector(".history");
+icon.addEventListener("click", () => {
+  history.classList.add("expand");
+  document.querySelector(".all").classList.add("blur");
+  document.querySelector("#inputNum").classList.add("blur");
+});
 
+function closeBtn() {
+  history.classList.remove("expand");
+  document.querySelector(".all").classList.remove("blur");
+  document.querySelector("#inputNum").classList.remove("blur");
+}
 
 let buttons = document.querySelectorAll(".button");
 for (let index = 0; index < buttons.length; index++) {
   let btn = buttons[index];
   btn.addEventListener("click", () => {
+    
+    btn.style.backgroundColor = "#ff2e63";
+    btn.style.transform = "scale(1.1)"
+    setTimeout(() => {
+      btn.style.backgroundColor = "#b0daff";
+      btn.style.transform = "scale(1)"
+    }, 200);
     let myInput = document.querySelector("#inputNum");
     if (btn.value == "BS") {
       backspace(myInput);
@@ -26,32 +37,36 @@ for (let index = 0; index < buttons.length; index++) {
 }
 
 function append(input, btn) {
-  input.value += btn.value;
+  input.innerHTML += btn.value;
 }
 function erase(input) {
-  input.value = "";
+  input.innerHTML = "";
   console.clear();
 }
 
 function backspace(input) {
-  let val = input.value;
-  input.value = val.substring(0, val.length - 1);
+  let val = input.innerHTML;
+  input.innerHTML = val.substring(0, val.length - 1);
 }
 
 function calculateResult(myInput) {
-  let result = eval(myInput.value);
+  let result = eval(myInput.innerHTML);
   if (result == undefined) {
     alert("Perform operations");
   } else {
-    history(myInput.value, result);
-    myInput.value = result;
+    result = result.toFixed(2);
+    addToHistory(myInput.innerHTML, result);
+    myInput.innerHTML = result;
   }
 }
 
-function history(expression, result) {
-  let calcHistory = document.querySelector(".history");
-  calcHistory.innerHTML +=
-    "<div class='myText'>" + formatExpression(expression) + " = " + result + "</div>";
+function addToHistory(expression, result) {
+  history.innerHTML +=
+    "<p class='myText'>" +
+    formatExpression(expression) +
+    " = " +
+    result +
+    "</p>";
 }
 
 function formatExpression(expression) {
